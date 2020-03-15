@@ -1,0 +1,30 @@
+<table class="users_index_table container">
+  <thead>
+        <tr>
+            <th>ユーザー一覧</th>
+        </tr>
+    </thead>
+    <tbody>
+    <%@users.each do |u|%>
+    <tr onclick='window.location="<%= '/users/' + u.id.to_s %>"' role="link">
+                <td class='post'>
+                  <div class='row'>
+                <div class="col-4">
+                <% if u.image? %>
+                <p class='show_user_img'><%= image_tag u.image.url %></p>
+                <% else %>
+                <%= image_tag("/images/icon/no-image.png") %>
+                <P>画像が挿入されていません(jpgのみ)</P>
+                <% end %>
+                </div>
+                <div class='col-8'>
+                <br><p>ユーザー：　<%=u.name%></p><br><br>
+                <p>メッセージ：</p>
+                <%=u.message%>
+                </div>
+            </div>
+            </td>    
+        </tr>
+        <%end%>
+    </tbody>
+</table>

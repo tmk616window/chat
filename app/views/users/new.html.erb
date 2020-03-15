@@ -1,0 +1,30 @@
+<div class='container'>
+<% if @user.errors.any?%>
+    <div id="error_explanation">
+        <ul>
+        <% @user.errors.full_messages. each do |msg|%>
+            <li><%= msg %></li>
+        <%end%>
+        </ul>
+    </div>
+<%end%>
+    
+<div class='row new_users_form'>    
+<div class='new_user_form'>
+<h1>新規登録</h1>
+    
+<%=form_for @user ,url:users_path do |f|%>
+<p>名前</p>
+<%=f.text_field:name%>
+<p>メールアドレス</p>
+<%=f.text_field:email%>
+<p>パスワード</p>
+<%=f.password_field:password%>
+<p>パスワード確認</p>
+<%=f.password_field:password_confirmation%><br><br>
+
+<%=f.submit '登録完了' ,class:'form-control btn btn-primary'%>
+<%end%>
+</div>
+</div>
+</div>

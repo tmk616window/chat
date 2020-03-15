@@ -1,0 +1,63 @@
+<h1>プロフィール編集</h1>
+
+
+
+<div class= 'container'>
+<%=form_for @user ,url:user_path do |f|%>
+
+            <div class= 'edit_user'>
+                <div class='row'>
+            <P class='edit_user_label'>名前</p>
+            <%=f.text_field:name,class:'form-control'%>
+                </div>
+            </div><br>
+            <div class= 'edit_user'>
+                <div class='row'>
+            <P class='edit_user_label'>ニックネーム</p>
+            <%=f.text_field:nickname,class:'form-control'%>
+                </div>
+            </div><br>
+            <div class= 'edit_user'>
+                <div class='row'>
+            <P class='edit_user_label'>出身地</p>
+            <%=f.text_field:from,class:'form-control'%>
+                </div>
+            </div><br>
+            <div class= 'edit_user'>
+                <div class='row'>
+            <P class='edit_user_label'>年齢</p>
+            <%=f.text_field:old,class:'form-control'%>
+                </div>
+            </div><br>
+            <div class= 'edit_user'>
+                <div class='row'>
+            <P class='edit_user_label'>メールアドレス</p>
+            <%=f.text_field:email,class:'form-control'%>
+                </div>
+            </div><br>
+            <div class= 'edit_user'>
+                <div class='row'>
+            <P class='edit_user_label'>自己紹介</p>
+            <%=f.text_area:message,class:'form-control'%>
+                </div>
+            </div>
+            
+            <div class="birth_date_field">
+  <%= f.label :'誕生日' %>
+  <%= raw sprintf(
+            f.date_select(
+              :born_date,
+              use_month_numbers: true,
+              start_year: 1930,
+              end_year: (Time.now.year),
+              default: Date.new(1989, 1, 1),
+              date_separator: '%s'),
+            '年 ', '月 ') + '日' %>
+</div>
+
+  <%= f.file_field :image %>
+
+<br><%=f.submit '更新',class: 'btn btn-primary edit_user_botton'%>
+<%end%>
+
+</div>

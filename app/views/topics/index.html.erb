@@ -1,0 +1,41 @@
+<% if @topic.errors.any?%>
+    <div id="error_explanation">
+        <ul>
+        <% @topic.errors.full_messages. each do |msg|%>
+            <li><%= msg %></li>
+        <%end%>
+        </ul>
+    </div>
+<%end%>
+
+
+<h1>トピック一覧</h1>
+<table class="table topic">
+    <thead>
+        <tr>
+            <th>トピック</th>
+            <th>投稿者</th>
+            <th>投稿時間</th>
+            <th>消去(投稿者のみ)</th>
+        </tr>
+    </thead>
+    <tbody>
+    <%@topics.each do |t|%>
+        <tr>
+            <td><%=link_to t.title, topics_show_path(t.id)%></td>
+            <td><%="#{t.name}"%></td>
+            <td><%="#{t.created_at}"%>></td>
+            <%if current_user.id == t.user_id%>
+            <td><%=link_to "消去", topics_destroy_path(t.id),method: :delete,class:'btn btn-danger',data: {confirm: "#{t.title}を消去しますか？"}%></td>
+            <%end%>
+        </tr>
+        <%end%>
+    </tbody>
+</table>
+
+<%=form_for @topic ,url: topics_create_path do |f|%>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :name, value: current_user.name %>
+<%=f.text_field:title%>
+<%=f.submit '投稿',class:'btn btn-primary'%>
+<%end%>

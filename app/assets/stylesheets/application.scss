@@ -1,0 +1,207 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ 
+@import "bootstrap";
+
+
+header{
+    background-color:#FF9999;
+    padding-bottom: 15px;
+    padding-top:10px;
+}
+
+.tab{
+}
+
+.current_user{
+    color:#66CCFF;
+}
+
+.tab1{
+    text-align: right;
+    padding-top:10px;
+
+}
+
+.board{
+    color: white;
+    float: left;
+
+}
+
+.board:hover{
+    text-decoration:none;
+    color: white;
+}
+
+.profile{
+    color:white;
+    font-size:20px;
+    margin-right: 10px;
+}
+
+.profile:hover{
+    color:white;
+    text-decoration:none;
+}
+
+.topic-list{
+    color:white;
+    font-size:20px;
+    margin-right: 10px;
+}
+
+.topic-list:hover{
+    color:white;
+    text-decoration:none;
+}
+
+
+.user-list{
+    color:white;
+    font-size:20px;
+    margin-right: 10px;
+}
+
+.user-list:hover{
+    color:white;
+    text-decoration:none;
+}
+
+.logout{
+    color:white;
+    font-size:20px;
+    margin-right: 10px;
+    
+}
+
+.logout:hover{
+    color:white;
+    text-decoration:none;
+}
+
+.login{
+    color:white;
+    font-size:20px;
+    margin-right: 10px;
+}
+
+.login:hover{
+    color:white;
+    text-decoration:none;
+}
+
+.new_user{
+    color:white;
+    font-size:20px;
+    margin-right: 10px;
+}
+
+.new_user:hover{
+    color:white;
+    text-decoration:none;
+}
+
+p{
+    color:black;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table td {
+  /*word-break: break-all;*/
+  overflow-wrap : break-word;
+}
+
+.post{
+    border:solid 1px ;
+}
+
+.post-created_at{
+    margin: 0;
+    float: right;
+    margin-top:30px;
+
+}
+
+.edit_user_botton{
+    float: right;
+}
+
+.edit_user_label{
+      font-weight: bold;
+      margin:0;
+
+}
+
+.edit_user_form{
+    float:right;
+}
+
+.show_user_image img{
+    border: solid 1px black;
+    text-align: center;
+}
+
+.show_user_img{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.show_user_image h2{
+    text-align: center;
+}
+
+.show_user_profile{
+    margin-top: 60px;
+    
+}
+
+.users_index_table {
+  width: 100%;
+  table-layout: fixed;
+cursor: pointer;
+cursor: hand;
+
+}
+
+.new_session{
+    margin-top: 80px;
+}
+
+.new_session_form{
+    padding: 100px 13% 100px 13%;
+    margin: 0 auto;
+    border: solid 1px gray;
+}
+
+.new_user_form{
+    margin:0 auto;
+}
+
+.new_user_form{
+    border: solid 1px gray;
+    padding: 80px 13% 80px 13% ;
+}
+
+.new_users_form{
+    margin-top: 40px;
+}
+    

@@ -1,0 +1,51 @@
+
+
+<div class= 'container'>
+    <div class='row'>
+    <div class='show_user_image col-3'>
+        
+        <% if @user.image? %>
+        <p class='show_user_img'><%= image_tag @user.image.url %></p>
+        <% else %>
+        <%= image_tag("/images/icon/no-image.png") %>
+        <P>画像が挿入されていません</P>
+        <% end %>
+        <h2><%="#{@user.name}"%></h2>
+    </div>
+    
+    <div class='show_user_profile col-9'>
+    <table class="table">
+    <tbody>
+        <tr>
+            <th>ニックネーム</th>
+            <td><%="#{@user.nickname}"%></td>
+        </tr>
+        <tr>
+            <th>出身地</th>
+            <td><%="#{@user.from}"%></td>
+        </tr>
+        <tr>
+            <th>年齢</th>
+            <td><%="#{@user.old}"%></td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td><%="#{@user.email}"%></td>
+        </tr>
+        <tr>
+            <th>誕生日</th>
+            <td><%="#{@user.born_date}"%></td>
+        </tr>
+        <tr>
+            <th>メッセージ</th>
+            <td><%="#{@user.message}"%></td>
+        </tr>
+    </tbody>
+    </table>
+        
+    </div>
+    </div>
+    <%if current_user.id == @user.id%>
+    <%=link_to "編集", edit_user_path(@user),class: 'edit_user_botton btn btn-primary'%>
+    <%end%>
+</div>
